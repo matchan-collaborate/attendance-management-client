@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useRef, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import Link from "../Atom/MenuLink"
+import Link from "../atom/MenuLink"
 
 const Humbergermenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,7 +38,7 @@ const Humbergermenu = () => {
     <div className="relative" ref={menuRef}>
       {/* ハンバーガーボタン */}
       <button
-        className="p-2 rounded-md bg-gray-200 hover:bg-gray-300 transition"
+        className="p-2 rounded-sm bg-gray-200 hover:bg-gray-300 transition"
         onClick={() => setIsOpen((prev) => !prev)}
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}

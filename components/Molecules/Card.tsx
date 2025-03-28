@@ -10,7 +10,7 @@ export const Card = ({ children, className }: CenterdCardProps) => {
   return (
     <div
       className={cn(
-        "bg-white p-6 shadow-lg w-full max-w-md min-h-[600px]",
+        "bg-white p-6 rounded-sm shadow-lg w-full max-w-md min-h-[600px]",
         className
       )}
     >

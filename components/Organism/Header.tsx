@@ -1,7 +1,7 @@
 import React from "react"
 import Humbergermenu from "./Humbergermenu"
-import Logo from "../Atom/Logo"
-import { CurrentTime } from "../Atom/CurrentTime"
+import Logo from "../atom/Logo"
+import { CurrentTime } from "../atom/CurrentTime"
 
 const Header = () => {
   return (

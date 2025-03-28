@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import React from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "../Atom/Button"
+import { Button } from "../atom/Button"
 import Link from "next/link"
 
 const nameReg = /^[ぁ-んァ-ヶ一-龥a-zA-Z\s]+$/

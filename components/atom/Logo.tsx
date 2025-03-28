@@ -1,7 +1,14 @@
-import React from "react";
+import Image from "next/image"
+import React from "react"
+import logo from "@/public/logo2.svg"
+import Link from "next/link"
 
 function Logo() {
-  return <h1 className="text-2xl font-bold">SES勤怠管理アプリ（仮）</h1>;
+  return (
+    <Link href="#">
+      <Image src={logo} width={180} height={180} alt="ses attendance management" />
+    </Link>
+  )
 }
 
-export default Logo;
+export default Logo

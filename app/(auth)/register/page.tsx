@@ -1,7 +1,7 @@
-import { CardTitle } from "@/components/Atom/CardTitle"
-import { Card } from "@/components/Molecules/Card"
-import { RegisterForm } from "@/components/Organism/RegisterForm"
-import { CenterdContainer } from "@/components/Templates/CenterdContainer"
+import { CardTitle } from "@/components/atom/CardTitle"
+import { Card } from "@/components/molecules/Card"
+import { RegisterForm } from "@/components/organism/RegisterForm"
+import { CenterdContainer } from "@/components/templates/CenterdContainer"
 import React from "react"
 
 const page = () => {

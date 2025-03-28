@@ -1,10 +1,10 @@
-import { CardTitle } from "@/components/Atom/CardTitle"
-import { Card } from "@/components/Molecules/Card"
-import { LoginForm } from "@/components/Organism/LoginForm"
-import { CenterdContainer } from "@/components/Templates/CenterdContainer"
+import { CardTitle } from "@/components/atom/CardTitle"
+import { Card } from "@/components/molecules/Card"
+import { LoginForm } from "@/components/organism/LoginForm"
+import { CenterdContainer } from "@/components/templates/CenterdContainer"
 import React from "react"
 
-const page = () => {
+export default async function page() {
   return (
     <CenterdContainer>
       <Card className="min-h-[540px]">
@@ -14,5 +14,3 @@ const page = () => {
     </CenterdContainer>
   )
 }
-
-export default page
