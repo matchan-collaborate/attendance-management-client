@@ -1,9 +1,9 @@
 "use client"
 import React, { useState, useRef, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import Link from "../atom/MenuLink"
+import {MenuLink} from "../atom/MenuLink"
 
-const Humbergermenu = () => {
+export const Humbergermenu = () => {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const menuList = [
@@ -50,7 +50,7 @@ const Humbergermenu = () => {
           <h3 className="text-gray-700 font-semibold border-b pb-2 pl-4">テスト太郎</h3>
           <ul className="mt-2 space-y-2">
             {menuList.map((item) => (
-              <Link
+              <MenuLink
                 key={item.menu}
                 href={item.href}
                 menu={item.menu}
