@@ -1,12 +1,12 @@
 import { CardTitle } from "@/components/atom/CardTitle"
 import { Card } from "@/components/molecules/Card"
-import { CenterdContainer } from "@/components/templates/CenterdContainer"
+import CenterdContainer from "@/components/templates/CenterdContainer"
 import Image from "next/image"
 import React from "react"
 import tomic from "@/public/tomic.jpg"
 import Link from "next/link"
 
-const page = () => {
+export default async function page() {
   return (
     <CenterdContainer>
       <Card className="max-w-xl px-6 py-6 min-h-full">
@@ -59,10 +59,7 @@ const page = () => {
         </div>
 
         <div className="flex justify-end mt-6 space-x-4">
-          <Link
-            href="/logout"
-            className="bg-sky-500 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded"
-          >
+          <Link href="/logout" className="bg-sky-500 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded">
             ログアウト
           </Link>
           <Link href="/logout" className="bg-rose-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded">
@@ -73,5 +70,3 @@ const page = () => {
     </CenterdContainer>
   )
 }
-
-export default page

@@ -1,7 +1,7 @@
 import { CardTitle } from "@/components/atom/CardTitle"
 import { Card } from "@/components/molecules/Card"
 import { LoginForm } from "@/components/organism/LoginForm"
-import { CenterdContainer } from "@/components/templates/CenterdContainer"
+import CenterdContainer from "@/components/templates/CenterdContainer"
 import React from "react"
 
 export default async function page() {
