@@ -59,7 +59,7 @@ export const LoginForm = () => {
         <Link href="#" className={linkStyle}>
           パスワードをお忘れですか？
         </Link>
-        <Button type="submit" className="mt-8">
+        <Button type="submit" className="mt-8 w-full">
           ログイン
         </Button>
         <Link href="#" className={linkStyle}>
