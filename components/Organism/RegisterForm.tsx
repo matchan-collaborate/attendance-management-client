@@ -75,7 +75,7 @@ export const RegisterForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="mt-8">
+        <Button type="submit" className="mt-8 w-full">
           新規登録
         </Button>
         <Link href="#" className={linkStyle}>
