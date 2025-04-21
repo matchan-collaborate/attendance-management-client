@@ -65,7 +65,7 @@ export const LoginForm = () => {
         <Button type="submit" className="mt-8 w-full">
           ログイン
         </Button>
-        <Link href="./register" className={linkStyle}>
+        <Link href="/register" className={linkStyle}>
           新規会員登録はこちらから
         </Link>
       </form>
