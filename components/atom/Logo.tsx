@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export const Logo = () => {
   return (
-    <Link href="#">
+    <Link href="/">
       <Image src={logo} width={180} height={180} alt="ses attendance management" />
     </Link>
   )
