@@ -21,11 +21,14 @@ export default function page() {
 
   // 仮置き
   useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login")
+    if (!loading) {
+      if (!user) {
+        router.push("/login")
+      } else {
+        router.push("/mypage")
+      }
     }
   }, [loading, user, router])
-
   // ローディング中やリダイレクト中は何も表示しない
   if (loading || !user) return null
 
@@ -33,7 +36,7 @@ export default function page() {
     <CenterdContainer>
       <Card className="max-w-xl px-6 py-6 min-h-full">
         <CardTitle title="マイページ" />
-        <MypageList />
+        <MypageList userData={user}/>
       </Card>
     </CenterdContainer>
   )
