@@ -1,4 +1,4 @@
-import { cn } from "@/app/util/tialwindUtil";
+import { cn } from "@/lib/tailwindUtils";
 import React from "react";
 
 type CenteredContainerProps = {
@@ -6,7 +6,7 @@ type CenteredContainerProps = {
   className?: string;
 };
 
-export const CenterdContainer = ({
+const CenterdContainer = ({
   children,
   className,
 }: CenteredContainerProps) => {
@@ -16,3 +16,5 @@ export const CenterdContainer = ({
     </div>
   );
 };
+
+export default CenterdContainer
