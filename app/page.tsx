@@ -2,7 +2,7 @@
 "use client"
 
 import useAuth from "@/hooks/useAuth"
-import { redirect, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
 export default function Home() {
@@ -14,13 +14,15 @@ export default function Home() {
   const router = useRouter()
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login")
+    if (!loading) {
+      if (!user) {
+        router.push("/login")
+      } else {
+        router.push("/mypage")
+      }
     }
   }, [loading, user, router])
 
   // ローディング中やリダイレクト中は何も表示しない
-  if (loading || !user) return null
-
-  if (user) router.push("/mypage")
+  return null
 }
