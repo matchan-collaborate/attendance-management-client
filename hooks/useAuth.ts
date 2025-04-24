@@ -8,7 +8,7 @@ const userUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/user`
 
 export default function useAuth() {
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const token = localStorage.getItem("token")

@@ -8,15 +8,20 @@ import { InfoItem } from "../molecules/InfoItem"
 import { TotalWorkHours } from "../atom/TotalWorkHours"
 import { TargetWorkHours } from "../atom/TargetWorkHours"
 import { RemainingWorkHours } from "../atom/RemainingWorkHours"
+import { User } from "@/types/user"
 
-export const MypageList = () => {
+export const MypageList = ({ userData }: { userData: User }) => {
+  const { id, name, profile_picture } = userData
+  // レスポンスで受け取ったbase64ファイルをjpeg形式に直す
+  const profPicSrc = `data:image/jpeg;base64,${profile_picture}`
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         {/* プロフィール（左：画像） */}
         <div className="flex flex-col items-center justify-start gap-6">
           <Image
-            src={tomic}
+            src={profPicSrc}
             width={200}
             height={200}
             alt="プロフィール画像"
@@ -28,11 +33,11 @@ export const MypageList = () => {
         <div className="flex flex-col gap-4 text-center">
           <InfoItem>
             <GrayLabel>ユーザー名</GrayLabel>
-            <p className="text-2xl font-semibold mt-1">テスト太郎</p>
+            <p className="text-2xl font-semibold mt-1">{name}</p>
           </InfoItem>
           <InfoItem>
             <GrayLabel>ユーザーID</GrayLabel>
-            <p className="text-lg mt-1">abcde12345</p>
+            <p className="text-lg mt-1">{id}</p>
           </InfoItem>
         </div>
       </div>
