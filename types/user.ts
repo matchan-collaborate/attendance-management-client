@@ -1,3 +1,6 @@
+/**
+ * responseで受け取るUser情報の型
+ *  */
 export type User = {
   id: number
   name: string

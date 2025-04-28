@@ -1,28 +1,15 @@
 // あとでサーバーコンポーネントに戻す
-"use client"
 
-import useAuth from "@/hooks/useAuth"
-import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 
-export default function Home() {
-  const { user, loading } = useAuth()
-  // if (!user) redirect("/login")
-  // if (user) redirect("/mypage")
-  // if (loading) return <div>ロード中</div>
+export default async function Home() {
+  const cookieStore = await cookies()
+  const session = cookieStore.get("laravel_session")?.value
 
-  const router = useRouter()
+  console.log(session)
 
-  useEffect(() => {
-    if (!loading) {
-      if (!user) {
-        router.push("/login")
-      } else {
-        router.push("/mypage")
-      }
-    }
-  }, [loading, user, router])
+  if (!session) redirect("/login")
 
-  // ローディング中やリダイレクト中は何も表示しない
-  return null
+  redirect("/mypage")
 }

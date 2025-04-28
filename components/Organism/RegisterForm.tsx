@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "../atom/Button"
 import Link from "next/link"
+import { FormTextBox } from "../molecules/FormTextBox"
+import { LoginFormData } from "@/schema/userSchema"
 
 const nameReg = /^[ぁ-んァ-ヶ一-龥a-zA-Z\s]+$/
 const registerSchema = z.object({
@@ -24,7 +26,7 @@ type RegisterFormData = z.infer<typeof registerSchema>
 export const RegisterForm = () => {
   const form = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
-    defaultValues:{name: "",email:"", password:""}
+    defaultValues: { name: "", email: "", password: "" },
   })
 
   const onSubmit = (data: RegisterFormData) => {
@@ -36,45 +38,9 @@ export const RegisterForm = () => {
   return (
     <Form {...form}>
       <form className="mx-auto my-0 w-3/4" onSubmit={form.handleSubmit(onSubmit)}>
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="block mt-8">お名前</FormLabel>
-              <FormControl>
-                <Input className="mt-1" type="name" {...field} />
-              </FormControl>
-              <FormMessage /> {/* エラー表示 */}
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="block mt-8">メールアドレス</FormLabel>
-              <FormControl>
-                <Input className="mt-1" type="email" {...field} />
-              </FormControl>
-              <FormMessage /> {/* エラー表示 */}
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="block mt-8">パスワード</FormLabel>
-              <FormControl>
-                <Input className="mt-1" type="password" {...field} />
-              </FormControl>
-              <FormMessage /> {/* エラー表示 */}
-            </FormItem>
-          )}
-        />
+        <FormTextBox name="name" type="name" label="お名前" form={form} />
+        <FormTextBox name="email" type="email" label="メールアドレス" form={form} />
+        <FormTextBox name="password" type="password" label="パスワード" form={form} />
         <Button type="submit" className="mt-8 w-full">
           新規登録
         </Button>

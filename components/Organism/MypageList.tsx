@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import CurrentMonth from "../atom/CurrentMonth"
 import tomic from "@/public/tomic.jpg"
@@ -13,7 +15,7 @@ import { User } from "@/types/user"
 export const MypageList = ({ userData }: { userData: User }) => {
   const { id, name, profile_picture } = userData
   // レスポンスで受け取ったbase64ファイルをjpeg形式に直す
-  const profPicSrc = `data:image/jpeg;base64,${profile_picture}`
+  // const profPicSrc = `data:image/jpeg;base64,${profile_picture}`
 
   return (
     <>
@@ -21,7 +23,7 @@ export const MypageList = ({ userData }: { userData: User }) => {
         {/* プロフィール（左：画像） */}
         <div className="flex flex-col items-center justify-start gap-6">
           <Image
-            src={profPicSrc}
+            src={tomic}
             width={200}
             height={200}
             alt="プロフィール画像"
