@@ -1,17 +1,19 @@
-import path from "path"
 import React from "react"
-import fs from "fs"
+import tomic from "@/public/tomic.jpg"
 
 const page = () => {
-  // 今の作業ディレクトリの絶対パスを作成
-  // path.join()で環境差やバグを解消
-  const imagePath = path.join(process.cwd(), "public", "tomic.jpg")
-
-  // publicの画像データをbase64に変換する
-  const base64Data = fs.readFileSync(imagePath, { encoding: "base64" })
-
-  console.log(base64Data)
-  return <div>page</div>
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mt-10 text-center">ああああ</h1>
+      <div className="flex justify-center items-center h-[200px] gap-48">
+        <div>text1</div>
+        <div className="h-[200px] w-[200px]">
+          <img src="/tomic.jpg" alt="" />
+        </div>
+        <div>text2</div>
+      </div>
+    </div>
+  )
 }
 
 export default page
