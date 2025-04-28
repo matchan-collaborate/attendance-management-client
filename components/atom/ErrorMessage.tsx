@@ -6,10 +6,9 @@ type ErrorMessageProps = {
   className?: string
 }
 
-const ErrorMessage = ({ errorMessage, className }: ErrorMessageProps) => {
+export const ErrorMessage = ({ errorMessage, className }: ErrorMessageProps) => {
   if (!errorMessage) return null
 
   return <p className={cn("text-red-500 text-sm", className)}>{errorMessage}</p>
 }
 
-export { ErrorMessage }

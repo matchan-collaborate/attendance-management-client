@@ -63,5 +63,3 @@ export const HumbergerMenu = () => {
     </div>
   )
 }
-
-export default HumbergerMenu

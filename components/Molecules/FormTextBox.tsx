@@ -13,7 +13,7 @@ type FormTextBoxType<T extends Record<string, any>> = {
   inputClassName?: string
 }
 
-const FormTextBox = <T extends Record<string, any>>({
+export const FormTextBox = <T extends Record<string, any>>({
   name,
   form,
   type,
@@ -37,5 +37,3 @@ const FormTextBox = <T extends Record<string, any>>({
     />
   )
 }
-
-export { FormTextBox }
