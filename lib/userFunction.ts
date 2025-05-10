@@ -1,9 +1,12 @@
 import { LoginFormData } from "@/schema/userSchema"
 import { apiClient } from "./axiosInstance"
 
+
+
+
 const csrfUrl = "/sanctum/csrf-cookie"
-const loginUrl = "/api/login"
-const mypageUrl = "/api/user"
+const loginUrl = "/login"
+const mypageUrl = "/user"
 
 /**
  * ログインする時に実行される関数

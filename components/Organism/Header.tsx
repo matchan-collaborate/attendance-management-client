@@ -2,7 +2,7 @@
 import React from "react"
 import { Logo } from "../atom/Logo"
 import dynamic from "next/dynamic"
-import { HumbergerMenu } from "./Humbergermenu"
+import { HumbergerMenu } from "./HumbergerMenu"
 
 export const Header = () => {
   const CurrentTime = dynamic(() => import("../atom/CurrentTime"), { ssr: false })

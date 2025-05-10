@@ -1,17 +1,19 @@
-import React from "react"
+"use client"
+
+import React, { useState } from "react"
 
 const page = () => {
+  const [count, setCount] = useState<number>(0)
+
+  const handlePlus = () => setCount((prev) => prev + 1)
+  const handleMinus = () => setCount((prev) => prev - 1)
+
   return (
-    <div>
-      <h1 className="text-2xl font-bold mt-10 text-center">ああああ</h1>
-      <div className="flex justify-center items-center h-[200px] gap-48">
-        <div>text1</div>
-        <div className="h-[200px] w-[200px]">
-          <img src="/tomic.jpg" alt="" />
-        </div>
-        <div>text2</div>
-      </div>
-    </div>
+    <>
+      <div>{count}</div>
+      <button onClick={handlePlus}>+</button>
+      <button onClick={handleMinus}>-</button>
+    </>
   )
 }
 
