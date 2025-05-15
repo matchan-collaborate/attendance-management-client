@@ -1,9 +1,6 @@
 import { LoginFormData } from "@/schema/userSchema"
 import { apiClient } from "./axiosInstance"
 
-
-
-
 const csrfUrl = "/sanctum/csrf-cookie"
 const loginUrl = "/login"
 const mypageUrl = "/user"
@@ -13,7 +10,7 @@ const mypageUrl = "/user"
  */
 export const login = async (data: LoginFormData) => {
   // まずCSRFトークンを取得
-  await apiClient.get(csrfUrl)
+  // await apiClient.get(csrfUrl)
 
   try {
     // email、passwordをサーバー側に送信
